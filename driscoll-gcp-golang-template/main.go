@@ -4,7 +4,8 @@ import (
 	"log"
 	"net/http"
 
-	controller "github.com/thomasdriscoll/driscoll-gcp-templates/driscoll-gcp-golang-template"
+	"github.com/thomasdriscoll/driscoll-gcp-templates/driscoll-gcp-golang-template/controller"
+	"github.com/thomasdriscoll/driscoll-gcp-templates/driscoll-gcp-golang-template/enums"
 )
 
 func setup() *http.ServeMux {
@@ -12,7 +13,7 @@ func setup() *http.ServeMux {
 	adminMux := controller.CreateAdminController()
 	// add
 	mux := http.NewServeMux()
-	mux.Handle("/admin/", http.StripPrefix("/admin", adminMux))
+	mux.Handle(enums.ADMIN_URL+"/", http.StripPrefix(enums.ADMIN_URL, adminMux))
 	return mux
 }
 
