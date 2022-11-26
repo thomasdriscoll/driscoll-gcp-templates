@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: driscoll-golang-template
+  name: deploy-driscoll-golang-template
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: driscoll-golang-template
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: driscoll-golang-template
+    spec:
+      containers:
+        - image: driscoll-golang-template 
+          imagePullPolicy: Never
+          name: driscoll-golang-template
+          resources: {}
+status: {}
