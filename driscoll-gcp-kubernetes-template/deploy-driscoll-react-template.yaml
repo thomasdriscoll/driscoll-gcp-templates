@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: driscoll-react-template
+  name: deploy-driscoll-react-template
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: driscoll-react-template
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: driscoll-react-template
+    spec:
+      containers:
+        - image: driscoll-react-template 
+          imagePullPolicy: Never
+          name: driscoll-react-template
+          resources: {}
+status: {}
